@@ -1,5 +1,5 @@
 export const WHITELIST_CONTRACT_ADDRESS =
-  "0x185B46787CeBf3a4731c8497A6532CD17f7bFdf1";
+  "0x8Df8193A8cc30b76D762DfBbBE92e306c80bfcb5";
 export const abi = [
   {
     inputs: [
@@ -54,17 +54,22 @@ export const abi = [
   {
     inputs: [
       {
-        internalType: "address",
+        internalType: "uint256",
         name: "",
-        type: "address",
+        type: "uint256",
       },
     ],
-    name: "whitelistAddresses",
+    name: "whitelist",
     outputs: [
       {
-        internalType: "bool",
-        name: "",
-        type: "bool",
+        internalType: "address",
+        name: "userAddress",
+        type: "address",
+      },
+      {
+        internalType: "string",
+        name: "emailAddress",
+        type: "string",
       },
     ],
     stateMutability: "view",
@@ -78,12 +83,12 @@ export const abi = [
         type: "address",
       },
     ],
-    name: "whitelistEmails",
+    name: "whitelistAddresses",
     outputs: [
       {
-        internalType: "string",
+        internalType: "bool",
         name: "",
-        type: "string",
+        type: "bool",
       },
     ],
     stateMutability: "view",

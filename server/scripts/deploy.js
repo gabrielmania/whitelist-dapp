@@ -14,4 +14,6 @@ main().catch((error) => {
   process.exitCode = 1;
 });
 
-// 0x185B46787CeBf3a4731c8497A6532CD17f7bFdf1
+// 0x8Df8193A8cc30b76D762DfBbBE92e306c80bfcb5
+// https://whitelist-dapp-v2-pi.vercel.app/
+// https://github.com/gabrielmania/whitelist-dapp

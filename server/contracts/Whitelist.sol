@@ -11,8 +11,13 @@ contract Whitelist {
     // map the address to a bool which will determine if the address has already
     // joined the whitelist or not
     mapping(address => bool) public whitelistAddresses;
-    // address will be mapped to the email inputed by the user
-    mapping(address => string) public whitelistEmails;
+    // create a new struct that will store user address and email to whitelist
+    struct Whitelist {
+        address userAddress;
+        string emailAddress;
+    }
+    // create an array of `Whitelist`
+    Whitelist[] public whitelist;
 
     // set the max number of address that can whitelist upon deployment of contract
     constructor(uint8 _maxWhitelistaddresses) {
@@ -34,7 +39,8 @@ contract Whitelist {
         // set to true if sender is not yet whitelisted and if number of address
         // whitelisted doesn't exceed yet the max allowed whitelist addresses
         whitelistAddresses[msg.sender] = true;
-        whitelistEmails[msg.sender] = _email;
+        Whitelist memory newWhitelist = Whitelist(msg.sender, _email);
+        whitelist.push(newWhitelist);
         numWhitelistAddresses++; // increment number of whitelist
     }
 }
